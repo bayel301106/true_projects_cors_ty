@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
     <h1 id="text" style="font-size:32px"></h1>
 
     <script>
-    const ws = new WebSocket('ws://localhost:5000')
+    const ws = new WebSocket('wss://true-projects-cors-one.onrender.com')
 
     ws.onmessage = (e) => {
       const data = JSON.parse(e.data)
