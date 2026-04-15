@@ -7,16 +7,18 @@ app.get('/', (req, res) => {
     <h1 id="text" style="font-size:32px"></h1>
 
     <script>
-    const ws = new WebSocket('wss://true-projects-cors-one.onrender.com')
+      const ws = new WebSocket('wss://true-projects-cors-one.onrender.com')
 
-    ws.onmessage = (e) => {
-      const data = JSON.parse(e.data)
-      document.getElementById('text').textContent = data.text
-    }
+      ws.onmessage = (e) => {
+        const data = JSON.parse(e.data)
+        document.getElementById('text').textContent = data.text
+      }
     </script>
   `)
 })
 
-app.listen(5001, () => {
-  console.log('TY: http://localhost:5001')
+const PORT = process.env.PORT || 3000
+
+app.listen(PORT, () => {
+  console.log('TY started')
 })
